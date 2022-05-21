@@ -1,6 +1,7 @@
 package filters;
 
 import java.io.IOException;
+
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -16,7 +17,7 @@ import javax.servlet.annotation.WebFilter;
 public class EncodingFilter implements Filter {
 
     /**
-     * Default constructor. 
+     * Default constructor.
      */
     public EncodingFilter() {
         // TODO Auto-generated constructor stub
@@ -37,6 +38,9 @@ public class EncodingFilter implements Filter {
 		// place your code here
 
 		// pass the request along the filter chain
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+
 		chain.doFilter(request, response);
 	}
 
